@@ -24,6 +24,14 @@ namespace RolePlay
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddAuthentication()
+                .AddGoogle(opts =>
+                 {
+                    opts.ClientId = "247165344170-41mmqninqv2hhf0esvql9u3gpqq3l8d1.apps.googleusercontent.com";
+                    opts.ClientSecret = "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";
+                    opts.SignInScheme = IdentityConstants.ExternalScheme;
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
